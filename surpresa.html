@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surpresa!</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin-top: 50px;
+            padding: 0 10px;
+            background-color: #f8f9fa;
+        }
+
+        h1 {
+            font-size: 1.8em;
+        }
+
+        input {
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 1.2em;
+            width: 80%;
+            max-width: 400px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        #message {
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+
+        #image {
+            display: none;
+            margin-top: 20px;
+            max-width: 90%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Digite o nome do amor da sua vida!</h1>
+    <input type="password" id="password" placeholder="Digite aqui">
+    <button onclick="checkPassword()">Entrar</button>
+    <div id="message"></div>
+    <img id="image" src="https://i.imgur.com/vUAHPa1.jpeg" alt="Surpresa">
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            const correctPassword = "lavinia"; // Substitua pela senha desejada
+            const message = document.getElementById('message');
+            const image = document.getElementById('image');
+
+            if (password.toLowerCase() === correctPassword.toLowerCase()) {
+                message.textContent = "Parabéns! Aqui está sua surpresa:";
+                message.style.color = "green";
+                image.style.display = "block";
+            } else {
+                message.textContent = "Nome incorreto. Tente novamente.";
+                message.style.color = "red";
+                image.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
